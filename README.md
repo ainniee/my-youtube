@@ -9,3 +9,12 @@ n
 -- sass 설치.               `npm install sass`
 -- react-helmet-async 설치. `npm install react-helmet-async`
 -- swiper 설치.             `npm install swiper`
+
+
+## 깃 명령어
+
+1. git add . `어떤 파일을 저장할지 선택`
+2. git status  `어떤 파일이 저장될지 확인`
+3. git commit -m " 내가 적을 메세지"  `저장 될 파일을 로컬 폴더에 저장`
+4. git push -u origin main  `깃허브로 저장 될 파일 전송`
+
