@@ -6,7 +6,6 @@ import Today from './pages/Today'
 import Music from './pages/Music'
 import Book from './pages/Book'
 import Anime from './pages/Anime'
-import Port from './pages/Port'
 import Movie from './pages/Movie'
 import Youtube from './pages/Youtube'
 import Channel from './pages/Channel'
@@ -29,7 +28,6 @@ const App = () => {
       <Route path='/movie' element={<Movie/>}/>
       <Route path='/book' element={<Book/>}/>
       <Route path='/anime' element={<Anime/>}/>
-      <Route path='/port' element={<Port/>}/>
       <Route path='/youtube' element={<Youtube/>}/>
       <Route path='/channel/:channelID' element={<Channel/>}/>
       <Route path='/video/:videoID' element={<Video/>}/>
