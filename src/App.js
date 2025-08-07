@@ -1,43 +1,44 @@
-import React from 'react'
-import { BrowserRouter,Routes,Route } from 'react-router-dom'
+              import React, { Suspense,lazy } from 'react'
+              import { BrowserRouter,Routes,Route } from 'react-router-dom'
+              import Main from './components/section/Main'
 
-import Home from './pages/Home'
-import Today from './pages/Today'
-import Music from './pages/Music'
-import Book from './pages/Book'
-import Anime from './pages/Anime'
-import Movie from './pages/Movie'
-import Youtube from './pages/Youtube'
-import Channel from './pages/Channel'
-import Video from './pages/Video'
-import Search from './pages/Search'
-import Not from './pages/Not'
-import Header from './components/section/Header'
-import Main from './components/section/Main'
-import Footer from './components/section/Footer'
+
+              const Home = lazy(()=>  import ('./pages/Home'));
+              const Today = lazy(()=>import  ('./pages/Today'));
+              const Music = lazy(()=>import  ('./pages/Music'));
+              const Book = lazy(()=>import ('./pages/Book'));
+              const Anime = lazy(()=>import  ('./pages/Anime'));
+              const Movie = lazy(()=>import ('./pages/Movie'));
+              const Youtube = lazy(()=>import ('./pages/Youtube'));
+              const Channel = lazy(()=>import  ('./pages/Channel'));
+              const Video = lazy(()=>import  ('./pages/Video'));
+              const Search = lazy(()=>import ('./pages/Search'));
+              const Not = lazy(()=>import ('./pages/Not'));
+
+
 
 const App = () => {
   return (
     <BrowserRouter>
-    <Header/>
-    <Main>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/today' element={<Today/>}/>
-      <Route path='/music' element={<Music/>}/>
-      <Route path='/movie' element={<Movie/>}/>
-      <Route path='/book' element={<Book/>}/>
-      <Route path='/anime' element={<Anime/>}/>
-      <Route path='/youtube' element={<Youtube/>}/>
-      <Route path='/channel/:channelID' element={<Channel/>}/>
-      <Route path='/video/:videoID' element={<Video/>}/>
-      <Route path='/search/:searchID' element={<Search/>}/>
-      <Route path='/*' element={<Not/>}/>
-    </Routes>
-    </Main>
-    <Footer/>
+      <Suspense fallback={<Main />}>
+        <Main>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/today' element={<Today />} />
+            <Route path='/music' element={<Music />} />
+            <Route path='/movie' element={<Movie />} />
+            <Route path='/book' element={<Book />} />
+            <Route path='/anime' element={<Anime />} />
+            <Route path='/youtube' element={<Youtube />} />
+            <Route path='/channel/:channelID' element={<Channel />} />
+            <Route path='/video/:videoID' element={<Video />} />
+            <Route path='/search/:searchID' element={<Search />} />
+            <Route path='/*' element={<Not />} />
+          </Routes>
+        </Main>
+      </Suspense>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
