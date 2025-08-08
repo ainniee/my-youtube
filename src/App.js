@@ -21,6 +21,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <Suspense fallback={<Main />}>
+
+
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/today' element={<Today />} />
